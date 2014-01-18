@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>JavaScript Simple</title>
+</head>
+
+<body>
+The HTML for Simple JavaScript <br />
+<input type="text" id="age">
+<input type="submit" onclick="judgeAge()">
+<br />
+</body>
+<!--  -->
+<script>
+function judgeAge() {
+	var ageObj = document.getElementById('age');
+	var age = ageObj.value;
+	if (ageObj.value >= 30) {
+		alert('you are 30 over!');
+	} else {
+		alert('so young');
+	}
+}
+</script>
+
+</html>
