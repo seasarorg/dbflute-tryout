@@ -19,13 +19,13 @@ public class SemaphoreTest extends UnitTryTestCase {
             public void run() {
                 try {
                     log("Start One1");
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("1 before sem.acquire(): " + sem);
-                    Thread.sleep(200);
+                    sleep(200);
                     sem.acquire();
-                    Thread.sleep(200);
+                    sleep(200);
                     log("1 after  sem.acquire(): " + sem);
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("End One2");
                     sem.release();
                 } catch (InterruptedException continued) {
@@ -38,13 +38,13 @@ public class SemaphoreTest extends UnitTryTestCase {
             public void run() {
                 try {
                     log("Start Two2");
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("2 before sem.acquire(): " + sem);
-                    Thread.sleep(200);
+                    sleep(200);
                     sem.acquire();
-                    Thread.sleep(200);
+                    sleep(200);
                     log("2 after  sem.acquire(): " + sem);
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("End Two2");
                     sem.release();
                 } catch (InterruptedException continued) {
@@ -56,13 +56,13 @@ public class SemaphoreTest extends UnitTryTestCase {
             public void run() {
                 try {
                     log("Start Three3");
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("3 before sem.acquire(): " + sem);
-                    Thread.sleep(200);
+                    sleep(200);
                     sem.acquire();
-                    Thread.sleep(200);
+                    sleep(200);
                     log("3 after  sem.acquire(): " + sem);
-                    Thread.sleep(5000);
+                    sleep(1000);
                     log("End Three3");
                     sem.release();
                 } catch (InterruptedException continued) {
@@ -82,15 +82,7 @@ public class SemaphoreTest extends UnitTryTestCase {
         es.submit(threadTwo);
         es.submit(threadThree);
 
-        sleep(30000);
+        sleep(10000);
         log(sem);
-    }
-
-    protected void sleep(int count) {
-        try {
-            Thread.sleep(count);
-        } catch (InterruptedException continued) {
-            log(continued.getMessage());
-        }
     }
 }
